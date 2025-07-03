@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #6bb7ff, #4a90e2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.container {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 360px;
+  backdrop-filter: blur(10px);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  background: #fff;
+  color: #0077ff;
+  cursor: pointer;
+}
+
+.weatherBox {
+  text-align: center;
+}
+
+.weather-icon {
+  font-size: 36px;
+  margin: 10px;
+}
+
+.hourly {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin: 10px 0;
+  padding-bottom: 10px;
+}
+
+.hour-card {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 8px;
+  min-width: 60px;
+}
+
+.daily {
+  margin-top: 10px;
+}
+
+.day-card {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 5px 0;
+}
