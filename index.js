@@ -31,7 +31,7 @@ async function getForecast(lat, lon) {
   const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=metric&appid=${API_KEY}`);
   const data = await res.json();
 
-  displayHourly(data.hourly.slice(0, 8));
+  displayHourly(data.hourly.slice(0, 7));
   displayDaily(data.daily.slice(0, 7));
 }
 
