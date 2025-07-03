@@ -28,11 +28,19 @@ async function getWeather(city) {
 }
 
 async function getForecast(lat, lon) {
-  const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=metric&appid=${API_KEY}`);
-  const data = await res.json();
+const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&appid=${API_KEY}&units=metric`);
+const data = await res.json();
 
-  displayHourly(data.hourly.slice(0, 7));
-  displayDaily(data.daily.slice(0, 7));
+console.log("OneCall data:", data); // ADD THIS TO DEBUG
+
+if (!data.hourly || !data.daily) {
+  console.error("Missing hourly or daily data from API response");
+  return;
+}
+
+displayHourly(data.hourly.slice(0, 7));
+displayDaily(data.daily.slice(0, 7));
+
 }
 
 function displayHourly(hourlyData) {
